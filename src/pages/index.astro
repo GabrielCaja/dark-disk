@@ -1,0 +1,59 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import Card from "../components/Card.astro";
+import Hero from "../components/Hero.astro";
+import Navbar from "../components/Navbar.astro";
+import Carousel from "../components/Carousel.astro";
+
+import { formContentTypes } from "astro/actions/runtime/utils.js";
+import { getCollection } from "astro:content";
+
+const productos = await getCollection("productos");
+console.log(productos);
+---
+
+<Layout>
+  <div class="flex flex-wrap justify-center py-6 my-6">
+    <Hero />
+    <div class="max-w mx-4"><Carousel /></div>
+  </div>
+  <h1 class="text-center text-3xl font-bold py-5">Top Ventas</h1>
+  <div class="flex flex-wrap justify-center gap-10 py-7">
+    {
+      productos
+        .slice(0, 3)
+        .map((producto: any) => (
+          <Card
+            id={producto.data.id}
+            title={producto.data.title}
+            description={producto.data.description}
+            price={producto.data.price}
+            imageUrl={producto.data.imageUrl}
+          />
+        ))
+    }
+  </div>
+  <h1 class="text-center text-3xl font-bold py-5">Nuestros Productos</h1>
+  <section id="productos">
+    <div class="flex flex-wrap justify-center gap-10 py-7">
+      {
+        productos.map((producto: any) => (
+          <Card
+            id={producto.data.id}
+            title={producto.data.title}
+            description={producto.data.description}
+            price={producto.data.price}
+            imageUrl={producto.data.imageUrl}
+          />
+        ))
+      }
+    </div>
+  </section>
+</Layout>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>

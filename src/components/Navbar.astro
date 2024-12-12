@@ -1,0 +1,19 @@
+---
+import Tema from "./Tema.astro";
+---
+
+<div class="navbar bg-base-100 shadow-xl">
+  <div class="flex-1">
+    <img class="w-16 mx-3 rounded-lg" src="/logo.jpg" alt="" />
+    <a class="btn btn-ghost text-xl" href="/">AstroGym</a>
+  </div>
+  <div class="flex-none">
+    <ul class="menu menu-horizontal px-1">
+      <li><a>Contacto</a></li>
+      <li><a>Sobre Nosotros</a></li>
+      <li>
+        <Tema />
+      </li>
+    </ul>
+  </div>
+</div>
