@@ -1,4 +1,4 @@
-# Dark Disk - Astro Project
+# gymAstro - Proyecto Astro
 
 Este proyecto está construido con Astro, un moderno generador de sitios web estáticos.
 
@@ -6,8 +6,8 @@ Este proyecto está construido con Astro, un moderno generador de sitios web est
 
 1. Clona el repositorio:
 ```sh
-git clone https://github.com/yourusername/dark-disk.git
-cd dark-disk
+git clone https://github.com/yourusername/gymAstro.git
+cd gymAstro
 ```
 
 2. Instala las dependencias:
